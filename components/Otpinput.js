@@ -136,7 +136,7 @@ const Otpinput = ()=> {
   RNOtpVerify.getHash = () =>
     RNOtpVerify.getHash()
     .then(console.log)
-    .catch(console.log);
+    .catch(console.log); 
 
     startListeningForOtp = () =>
     RNOtpVerify.getOtp()
