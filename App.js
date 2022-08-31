@@ -13,22 +13,26 @@
 
 // export default App;
 
-// import * as React from "react";
-// import { Settings, Text, View } from "react-native";
-// import { NavigationContainer } from "@react-navigation/native";
-// import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-// import { createDrawerNavigator } from '@react-navigation/drawer';
+//  import * as React from "react";
+// import { StyleSheet} from "react-native";
+// import Login from "./components/Login";
 // import home from "./components/home";
-// import category from "./components/category";
+// import festival from "./components/festival";
 // import createe from "./components/createe";
+// import category from "./components/category";
+// import custom from "./components/custom";
+// import signup from "./components/signup";
+// import { NavigationContainer } from "@react-navigation/native";
+// import { createNativeStackNavigator } from "@react-navigation/native-stack";
+// import { createDrawerNavigator } from '@react-navigation/drawer';
+// import screen1 from "./components/screen1";
+// import screen2 from "./components/screen2";
 // import brandinfo from "./components/brandinfo";
-// import menu from "./components/menu";
-// import Ionicons from "react-native-vector-icons/Ionicons";
-// import ProductDetails from"./components/ProductDetails";
+// import Login2 from "./components/Login2";
+// import Account from "./components/Account";
+// import 'react-native-gesture-handler';
+ 
 
-// // import 'react-native-gesture-handler';
-//  const Tab = createBottomTabNavigator();
-//  const Drawer = createDrawerNavigator();
 
 // export default function App() {
 //   return <NavigationContainer>
@@ -64,14 +68,12 @@
 // }
 
 
-import React, { component } from "react";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, KeyboardAvoidingView} from "react-native";
+
+import * as React from "react";
+import { StyleSheet} from "react-native";
 import Login from "./components/Login";
 import home from "./components/home";
-
 import festival from "./components/festival";
-// import brandinfo from "./components/brandinfo";
 import createe from "./components/createe";
 import category from "./components/category";
 import custom from "./components/custom";
@@ -83,16 +85,13 @@ import screen1 from "./components/screen1";
 import screen2 from "./components/screen2";
 import brandinfo from "./components/brandinfo";
 import Login2 from "./components/Login2";
-
 import Account from "./components/Account";
-
-
+import Otpinput from "./components/Otpinput";
  const Stack = createNativeStackNavigator();
  const Drawer = createDrawerNavigator();
-
  function DrawerRoutes() {
+
   return (
-    
     
       <Drawer.Navigator initialRouteName="Account">
         <Drawer.Screen name="home" component={home} />
@@ -102,39 +101,23 @@ import Account from "./components/Account";
    
   );
 };
-const other = () => {
-  return (
-    <KeyboardAvoidingView
-      
-      style={{flex: 1}}
-      enabled>
-      <StatusBar barStyle="dark-content" />
+  function App() {
 
-      <SafeAreaView style={styles.container}>
-        <LoginView />
-      </SafeAreaView>
-    </KeyboardAvoidingView>
-  );
-};
- function App() {
-  
    return (
    <NavigationContainer>
     
-      <Stack.Navigator screenOptions={{headerShown: false}}initialRouteName="home">
-     
-        <Stack.Screen name="Login" component={Login} />
+      <Stack.Navigator screenOptions={{headerShown: false}}initialRouteName="Otpinput">
+      <Stack.Screen name="Otpinput" component={Otpinput} />
         <Stack.Screen name="Login2" component={Login2} />
-       
+        <Stack.Screen name="Login" component={Login} />
         <Stack.Screen
           name="home"
-          component={DrawerRoutes}
-          screenOption={{}}
+          component={home}
+          screenOption={{headerShown: false}}
         />
         <Stack.Screen name="festival" component={festival} />
         <Stack.Screen name="signup" component={signup} />
        <Stack.Screen name="createe" component={createe}/> 
-        {/* <Stack.Screen name="brandinfo" components={brandinfo}/>  */}
         <Stack.Screen name="category" component={category}/>
         <Stack.Screen name="custom" component={custom}/>
     
